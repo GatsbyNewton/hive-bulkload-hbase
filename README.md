@@ -27,9 +27,9 @@ $ mvn assembly:assembly
 #Usage
 The aim of the MapReduce job is to generate HBase date files(HFile) from your input RCFile using HFileOutputFormat. Before you generate HFile, you should get Hive table's schema. And you can make use the following methods to get the schema.</br>
 * Reading Hive metadata.
-* Parsing a file that records the schema. In my opinion, it is more efficient than reading metadata, even if a table contains serveral thousands columns.
-Output from Mapper class are ImmutableBytesWritable,KeyValue. These classes are used by the subsequent partitioner and reducer to create the HFiles. 
-There is no need to write your own reducer as the **HFileOutputFormat.configureIncrementalLoad()** as used in the driver code sets the correct reducer and partitioner up for you. 
+* Parsing a file that records the schema. In my opinion, it is more efficient than reading metadata, even if a table contains serveral thousands columns.</br>
+Output from Mapper class are ImmutableBytesWritable,KeyValue. These classes are used by the subsequent partitioner and reducer to create the HFiles.</br>
+There is no need to write your own reducer as the **HFileOutputFormat.configureIncrementalLoad()** as used in the driver code sets the correct reducer and partitioner up for you. </br>
 Then, you should copy generated HFile from one cluster to another if Hive and HBase are on different cluster.
 ```shell
 hadoop distcp hdfs://mycluster-hive/hfile/hbase hdfs://mycluster-hbase/hbase/test
