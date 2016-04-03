@@ -69,9 +69,8 @@ public class Driver extends Configured implements Tool{
         }
 
         conf.set("schema", sb.toString());
-
-
-       System.exit(ToolRunner.run(conf, new Driver(), otherArgs));
+		
+		System.exit(ToolRunner.run(conf, new Driver(), otherArgs));
     }
 
     @SuppressWarnings("deprecation")
