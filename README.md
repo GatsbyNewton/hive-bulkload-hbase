@@ -12,7 +12,7 @@ However, the first two methods is slower than the last method that you simply by
 
 1. HFile preparation via a MapReduce job.</br>
 2. Importing the HFile into HBase using LoadIncrementalHFiles.doBulkLoad(eg. Driver2.java).</br>
-3. 
+
 But HBase bulk load process consists of three steps if Hive and HBase are on different cluster.</br>
 
 1. HFile preparation via a MapReduce job.</br>
