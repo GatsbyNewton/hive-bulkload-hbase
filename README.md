@@ -1,5 +1,6 @@
 # hive-bulkload-hbase
 Import hive table into hbase as fast as possible.
+
 #Description
 HBase gives random read and write access to your big data, but getting your big data into HBase can be a challenge. And there are three
 methods to be able to make it.</br>
@@ -13,9 +14,11 @@ But HBase bulk load process consists of three steps if Hive and HBase are on dif
 1. HFile preparation via a MapReduce job.</br>
 2. Copying HFile from Hive cluster to HBase cluster.</br>
 3. Importing the HFile into HBase via HBase commands on HBase cluster.
+
 #Directories
 - bin: Contains the shell script that starts the program.
 - src: Contains the source code and the test code.
+
 #Compilation
 ```shell
 $ mvn clean compile
@@ -28,6 +31,7 @@ $ mvn assembly:assembly
 The aim of the MapReduce job is to generate HBase date files(HFile) from your input RCFile using HFileOutputFormat. Before you generate HFile, you should get Hive table's schema. And you can make use the following methods to get the schema.</br>
 * Reading Hive metadata.
 * Parsing a file that records the schema. In my opinion, it is more efficient than reading metadata, even if a table contains serveral thousands columns.</br>
+
 Output from Mapper class are ImmutableBytesWritable,KeyValue. These classes are used by the subsequent partitioner and reducer to create the HFiles.</br>
 There is no need to write your own reducer as the **HFileOutputFormat.configureIncrementalLoad()** as used in the driver code sets the correct reducer and partitioner up for you. </br>
 Then, you should copy generated HFile from one cluster to another if Hive and HBase are on different cluster.
