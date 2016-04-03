@@ -5,7 +5,7 @@ Import hive table into hbase as fast as possible.
 HBase gives random read and write access to your big data, but getting your big data into HBase can be a challenge. And there are three methods to be able to make it.</br>
 
 1. Use the API to put the data one by one.</br>
-2. Hive Integrates HBase.</br>
+2. Hive Integrates HBase. And you can check [HBaseIntegration](https://cwiki.apache.org/confluence/display/Hive/HBaseIntegration) and [here](http://blog.csdn.net/u010376788/article/details/50905476) </br>
 3. HBase comes with bulk load capabilities.</br>
 
 However, the first two methods is slower than the last method that you simply bypassed the lot and created the HFiles yourself and copied them directly into the HDFS. The HBase bulk load process consists of two steps if Hive and HBase are on one cluster.</br>
