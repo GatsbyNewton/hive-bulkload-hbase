@@ -1,0 +1,21 @@
+-- hive -e 'show create table grades' > table
+CREATE TABLE `mydb.grades`(
+  `id` int, 
+  `name` string, 
+  `age` int)
+ROW FORMAT DELIMITED 
+  FIELDS TERMINATED BY ',' 
+  LINES TERMINATED BY '\n' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.RCFileInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.RCFileOutputFormat'
+LOCATION
+  'hdfs://192.168.253.11:9000/user/root/hive/warehouse/mydb.db/grades'
+TBLPROPERTIES (
+  'COLUMN_STATS_ACCURATE'='true', 
+  'numFiles'='1', 
+  'numRows'='0', 
+  'rawDataSize'='0', 
+  'totalSize'='30', 
+  'transient_lastDdlTime'='1457602162')
