@@ -1,8 +1,8 @@
 -- hive -e 'show create table grades' > table
 CREATE TABLE `mydb.grades`(
-  `id` int, 
-  `name` string, 
-  `age` int)
+  `id` int COMMENT 'ID', 
+  `name` string COMMENT '姓名', 
+  `age` int COMMENT '年龄')
 ROW FORMAT DELIMITED 
   FIELDS TERMINATED BY ',' 
   LINES TERMINATED BY '\n' 
