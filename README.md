@@ -36,8 +36,8 @@ But HBase bulk load process consists of three steps if Hive and HBase are on dif
 #Usage
 The aim of the MapReduce job is to generate HBase date files(HFile) from your input RCFile using HFileOutputFormat. Before you generate HFile, you should get Hive table's schema. And you can make use the following methods to get the schema.</br>
 * Reading Hive metadata.
-  * Using JDBC to gain from MysSQL
-  * Using HCatalog to gain from MySQL
+  * Using JDBC to obtain from MysSQL
+  * Using HCatalog to obtain from MySQL
 * Parsing a file that records the schema. In my opinion, it is more efficient than reading metadata, even if a table contains serveral thousands columns.</br>
 
 Output from Mapper class are *ImmutableBytesWritable*, *KeyValue*. These classes are used by the subsequent partitioner and reducer to create the HFiles.</br>
