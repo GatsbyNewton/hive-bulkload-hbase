@@ -39,7 +39,7 @@ public class Driver extends Configured implements Tool{
         final String HBASE_CONFIG_ZOOKEEPER_CLIENT = "hbase.zookeeper.property.clientPort";
         final String HBASE_ZOOKEEPER_CLIENT_PORT = "2181";
         final String HBASE_CONFIG_ZOOKEEPER_QUORUM = "hbase.zookeeper.quorum";
-        final String HBASE_ZOOKEEPER_SERVER = "bigdata-arch-hbase38.bh,bigdata-arch-hbase43.bh,bigdata-arch-hdp00.bh";
+        final String HBASE_ZOOKEEPER_SERVER = "hbase38,hbase43,hbase00";
 
         conf.set(HBASE_CONFIG_ZOOKEEPER_CLIENT, HBASE_ZOOKEEPER_CLIENT_PORT);
         conf.set(HBASE_CONFIG_ZOOKEEPER_QUORUM, HBASE_ZOOKEEPER_SERVER);
