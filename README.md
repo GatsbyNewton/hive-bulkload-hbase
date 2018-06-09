@@ -1,12 +1,12 @@
 # hive-bulkload-hbase
 Import hive table into hbase as fast as possible.
 
-#Directories
+# Directories
 - bin: Contains the shell script that starts the program.
 - src: Contains the source code and the test code.
 - schema: Contains the schema file of a table.
 
-#Compilation
+# Compilation
 ```shell
 $ mvn clean compile
 
@@ -15,7 +15,7 @@ $ mvn clean package
 $ mvn assembly:assembly
 ```
 
-#Description
+# Description
 HBase gives random read and write access to your big data, but getting your big data into HBase can be a challenge. And there are three methods to be able to make it.</br>
 
 1. Use the API to put the data one by one.</br>
@@ -33,7 +33,7 @@ But HBase bulk load process consists of three steps if Hive and HBase are on dif
 2. Copying HFile from Hive cluster to HBase cluster.</br>
 3. Importing the HFile into HBase via HBase commands on HBase cluster.
 
-#Usage
+# Usage
 The aim of the MapReduce job is to generate HBase date files(HFile) from your input RCFile using HFileOutputFormat. Before you generate HFile, you should get Hive table's schema. And you can make use the following methods to get the schema.</br>
 * Reading Hive metadata.
   * Using JDBC to obtain from MysSQL
