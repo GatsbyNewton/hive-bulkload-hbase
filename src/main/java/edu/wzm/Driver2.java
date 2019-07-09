@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Created by GatsbyNewton on 2016/3/24.
  */
-public class Driver extends Configured implements Tool{
+public class Driver2 extends Configured implements Tool{
 
     private static Configuration conf = new Configuration();
     private static Configuration hconf = null;
@@ -73,7 +73,7 @@ public class Driver extends Configured implements Tool{
 		if(ToolRunner.run(conf, new Driver(), otherArgs) == 0){
 			// Importing the generated HFiles into a HBase table
 			LoadIncrementalHFiles loader = new LoadIncrementalHFiles(conf);
-			loader.doBulkLoad(new Path(otherArgs[1], otherArgs[3]);
+			loader.doBulkLoad(new Path(otherArgs[1]), new HTable(hconf ,otherArgs[3])）;
 			System.exit(0);
 		}
 		else{
